@@ -90,6 +90,14 @@ function App() {
         <section>
           <h3>Current tasks(4)</h3>
           <ul>
+            {tasks.filter((task) => task.state !== 'completed').map((task) => (
+              <li key={task.id}>
+                <h5>{task.title}</h5>
+                <div className=''>{task.state}</div>
+                <div>{`Priority: ${task.priority}`}</div>
+                <div>{`Est. time: ${task.estimatedTime}`}</div>
+              </li>
+            ))}
 
           </ul>
         </section>
@@ -102,6 +110,7 @@ function App() {
             {tasks.filter((task) => task.state === 'completed').map((task) => (
               <li key={task.id}>
                 <h5>{task.title}</h5>
+                <div className='completed'>{task.state}</div>
                 <div>{`Priority: ${task.priority}`}</div>
                 <div>{`Est. time: ${task.estimatedTime}`}</div>
 
