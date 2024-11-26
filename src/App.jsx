@@ -93,7 +93,7 @@ function App() {
             {tasks.filter((task) => task.state !== 'completed').map((task) => (
               <li key={task.id}>
                 <h5>{task.title}</h5>
-                <div className=''>{task.state}</div>
+                <div className={task.state === 'backlog' ? 'backlog' : 'in_progress'}>{task.state}</div>
                 <div>{`Priority: ${task.priority}`}</div>
                 <div>{`Est. time: ${task.estimatedTime}`}</div>
               </li>
