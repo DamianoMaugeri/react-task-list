@@ -88,7 +88,7 @@ function App() {
       </header>
       <main>
         <section>
-          <h3>Current tasks(4)</h3>
+          <h3>Current tasks({tasks.filter((task) => task.state !== 'completed').length})</h3>
           <ul>
             {tasks.filter((task) => task.state !== 'completed').map((task) => (
               <li key={task.id}>
@@ -105,7 +105,7 @@ function App() {
         <hr />
 
         <section>
-          <h3>Completed tasks(6)</h3>
+          <h3>Completed tasks({tasks.filter((task) => task.state === 'completed').length})</h3>
           <ul>
             {tasks.filter((task) => task.state === 'completed').map((task) => (
               <li key={task.id}>
